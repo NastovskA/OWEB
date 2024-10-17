@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Best Pizza</title>
+    <style>
+
+    body{ 
+    border-top: 6px solid #000000;
+    border-bottom: 6px solid #000000;
+    border-left: 6px solid #000000;
+    border-right: 6px solid #000000;
+    padding: 50px;
+    width: 400px; 
+    height: 630px;
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    <center>
+    <h1>Order Pizza!</h1>
+    <form method = "post" action = "Thank.html">
+    
+    <p>
+    <strong>Select the pizza size:</strong><br>
+   
+    <label><input name = "Size" type = "radio" value = "Big">Big </label><br>
+    <label><input name = "Size" type = "radio" value = "Medium">Medium </label><br>
+    <label><input name = "Size" type = "radio" value = "Small">Small</label></p>
+    
+    
+    <p>
+    <lable><strong>Select the crust type:</strong><br>.
+    
+    <select name = "choose">
+    <option selectec>Deep Dish</option>
+    <option>Neapolitan</option>
+    <option>New York Style</option>
+    <option>Chicago-Style</option>
+    <option>Sicilian</option>
+    <option>Crispy Texture Lightness </option>
+    <option>Stuffed</option>
+    <option>Gluten-Free </option>
+    <option>Cauliflower </option>
+    </select></lable></p>
+    
+    
+    <p>
+    <lable><strong>Select the filler:</strong><br>
+    
+    <lable><input name = "filler" type = "checkbox" value = "Egg">  Egg  </lable><br>
+    <lable><input name = "filler" type = "checkbox" value = "Bacon">  Bacon  </lable><br>
+    <lable><input name = "filler" type = "checkbox" value = "Pepper">  Pepper  </lable><br>
+    <lable><input name = "filler" type = "checkbox" value = "Sausages">  Sausages </lable><br>
+    <lable><input name = "filler" type = "checkbox" value = "Pineapple">  Pineapple  </lable><br>
+    <lable><input name = "filler" type = "checkbox" value = "Artichoke">  Artichoke </lable><br>
+    <lable><input name = "filler" type = "checkbox" value = "BBQ sauce">  BBQ sauce  </lable><br>
+    <lable><input  name = "filler" type = "checkbox" value = "Mushrooms">  Mushrooms  </lable><br>
+    <lable><input name = "filler" type = "checkbox" value = "Chilli rocket">  Chilli rocket  </lable><br>
+    </lable></p>
+    
+
+    <p>
+    <label><strong> Name: </strong>
+    <input name = "name" type = "text" size = "25"  maxlength = "35" required>
+    </label></p>
+ 
+    <p>
+    <label><strong> Phone: </strong>
+    <input name = "phone" type = "tel" placeholder= "+389-XX-XXX-XXX" pattern = "[+]{1}[0-9]{3}-[0-9]{2}-[0-9]{3}-[0-9]{3}" required><br><small> format: +389-xx-xxx-xxx </small>
+    </label></p>
+  
+    <textarea rows="5" cols="40" placeholder="Message: "></textarea>    
+    
+    <p> 
+    <input type = "submit" value = "SEND">
+    <input type = "reset" value = "RESET">
+    </p>
+    </form>
+    </center>
+</body>
+</html>
