@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess The Word Game</title>
+    <link rel="stylesheet" href="Game.css">
+</head>
+<body>
+    <div id="startScreen">
+        <h1 class="title">GUESS THE WORD</h1>
+        <p class="subtitle">Test your word-guessing skills!</p>
+        <button id="startButton" class="button">Start Game</button>
+    </div>
+
+    <div id="gameScreen">
+        <h2 class="title">GUESS THE WORD</h2>
+        <div id="wordDisplay"></div>
+        <div id="attempts">Remaining attempts: <span id="attemptCount">5</span></div>
+        <div id="inputSection">
+            <input type="text" id="letterInput" maxlength="1">
+            <button id="guessButton" class="button">Guess</button>
+        </div>
+        <div id="usedLetters">Used letters: </div>
+    </div>
+
+    <div id="winPopup" class="popup">
+        <div class="popup-content">
+            <h2>Congratulations!</h2>
+            <p>You guessed the word correctly!</p>
+            <button class="button playAgain">Play Again</button>
+            <button class="button close">Close</button>
+        </div>
+    </div>
+
+    <div id="losePopup" class="popup">
+        <div class="popup-content">
+            <h2>Game Over!</h2>
+            <p>The correct word was: <span id="correctWord"></span></p>
+            <button class="button playAgain">Play Again</button>
+            <button class="button close">Close</button>
+        </div>
+    </div>
+
+    <script src="Game.js"></script>
+</body>
+</html>
