@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">SPORT CARS</title>
+    <link rel="stylesheet" href="kategorii.css"> 
+
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="pocetna.html">HOME</a></li>
+                <li><a href="pocetna.html">CATEGORIES</a></li>
+                <li><a href="reviews.html">CAR REVIEWS</a></li>
+                <li><a href="pocetna.html">ABOUT US</a></li>
+                <li><a href="pocetna.html">CONTACT</a></li>
+               
+                <li>
+                    <div class="search-container">
+                        <input type="text" placeholder="🔍 Search ..." class="search-input">
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div class="title">SPORT CAR</div>
+    </header>
+
+    <div class="main-container">
+        <div class="filter-section">
+            <h2>Search & Filter</h2>
+            
+            <div class="plakanje">
+                <strong>PAYMENT TYPE:</strong>
+                <label><input name="paymentType" type="radio" value="totalPrice">Total Price</label>
+                <label><input name="paymentType" type="radio" value="monthlyPrice">Monthly Price</label>
+            </div>
+    
+            <div class="car-brand">
+                <label for="carBrand"><strong>CAR BRANDS:</strong></label>
+                <select id="carBrand" name="carBrand">
+                    <option value="all">All</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="bmw">BMW</option>
+                    <option value="audi">Audi</option>
+                    <option value="toyota">Toyota</option>
+                    <option value="ford">Ford</option>
+                    <option value="jaguar">Jaguar</option>
+                    <option value="porsche">Porsche</option>
+                    <option value="landrover">Land Rover</option>
+                    <option value="volkswagen">Volkswagen</option>
+                    <option value="skoda">Skoda</option>
+                    <option value="tesla">Tesla</option>
+                    <option value="kia">Kia</option>
+                    <option value="mini">Mini</option>
+                </select>
+            </div>
+    
+            <div class="price-range">
+                <label for="priceFrom"><strong>PRICE FROM:</strong></label>
+                <input type="number" id="priceFrom" name="priceFrom" min="10000" step="1000" placeholder="Enter Min Price">
+                
+                <label for="priceTo"><strong>PRICE TO:</strong></label>
+                <input type="number" id="priceTo" name="priceTo" min="10000" step="1000" placeholder="Enter Max Price">
+            </div>
+    
+            <div class="fuel-type">
+                <label for="fuelType"><strong>FUEL TYPE:</strong></label>
+                <select id="fuelType" name="fuelType">
+                    <option value="all">All</option>
+                    <option value="petrol">Petrol</option>
+                    <option value="diesel">Diesel</option>
+                    <option value="hybrid">Hybrid</option>
+                </select>
+            </div>
+    
+            <div class="transmission">
+                <strong>TRANSMISSION:</strong>
+                <label><input type="radio" id="automatic" name="transmission" value="automatic">Automatic</label>
+                <label><input type="radio" id="manual" name="transmission" value="manual">Manual</label>
+            </div>
+    
+            <div class="mileage">
+                <label for="mileage"><strong>Mileage (km):</strong></label>
+                <select id="mileage" name="mileage">
+                    <option value="all">All</option>
+                    <option value="10000">0-10,000 km</option>
+                    <option value="50000">10,000-50,000 km</option>
+                    <option value="100000">50,000-100,000 km</option>
+                    <option value="150000">100,000+ km</option>
+                </select>
+            </div>
+
+            <div class="filter-buttons">
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </div>
+        </div>
+
+        <div class="boxes-container">
+            <p id="noResultsMessage" style="display: none; color: red; font-weight: bold;">No cars available for the selected brand.</p>
+
+            <div class="box">
+                <h2>Ford</h2>
+                <h4>Mustang 5.0 V8 Mach 1 2dr Petrol Coupe</h4>
+                <img src="sport1.jpg" alt="Image 1">
+                <button class="button-view" data-mileage="3,302" 
+                data-year="2023" 
+                data-fuel="Petrol" 
+                data-transmission="Manual" 
+                data-colour="Black" 
+                data-engine="5.0 L" 
+                data-co2="284 g/km"
+                data-doors="2"
+                date-price="48,500$">View details</button>
+                <div class="car-item">
+                    <span class="like-icon">❤️</span> 
+                   <button class="btn like">Like</button>
+               </div>
+       
+            </div>
+
+            <div class="box" >
+                <h2>Ford</h2>
+                    <h4>Mustang MACH 1 - DEPOSIT TAKEN - SIMILAR CARS REQUIRED!</h4>
+                <img src="sport2.jpg" alt="Image 2">
+                <button class="button-view" data-mileage="2,000" 
+                data-year="2021" 
+                data-fuel="Petrol" 
+                data-transmission="Automatic" 
+                data-colour="Grey" 
+                data-engine="5.0 L" 
+                data-co2="270 g/km"
+                data-doors="2"
+                date-price="49,995$">View details</button>
+                <div class="car-item">
+                    <span class="like-icon">❤️</span> 
+                   <button class="btn like">Like</button>
+               </div>
+       
+            </div>
+            <div class="box">
+                <h2>BMW</h2>
+                <h4>i8 1.5 7.1kWh Auto 4WD Euro 6 (s/s) 2dr</h4>
+                <img src="sport3.jpg" alt="Image 3">
+                <button class="button-view" data-mileage="78,000" 
+                data-year="2014" 
+                data-fuel="Petrol" 
+                data-transmission="Automatic" 
+                data-colour="White" 
+                data-engine="1.5 L" 
+                data-co2="49 g/km"
+                data-doors="2"
+                date-price="27,490$">View details</button>  
+                <div class="car-item">
+                    <span class="like-icon">❤️</span> 
+                   <button class="btn like">Like</button>
+               </div>
+            
+                 </div>
+
+            <div class="box" >
+                <h2>Jaguar</h2>
+                <h4>F-Type 2.0i GPF R-Dynamic Auto Euro 6 (s/s) 2dr</h4>
+                <img src="sport4.jpg" alt="Image 4">
+                <button class="button-view"  data-mileage="51,000" 
+                data-year="2018" 
+                data-fuel="Petrol" 
+                data-transmission="Automatic" 
+                data-colour="Red" 
+                data-engine="2.0 L" 
+                data-co2="163 g/km"
+                data-doors="2"
+                date-price="25,990$">View details</button> 
+                <div class="car-item">
+                    <span class="like-icon">❤️</span> 
+                   <button class="btn like">Like</button>
+               </div>
+             
+                 </div>
+
+            <div class="box">
+                <h2>Porsche</h2>
+                <h4>Cayman 2.0 Style Edition 2dr PDK</h4>
+                <img src="sport5.jpg" alt="Image 5">
+                <button class="button-view" data-mileage="604" 
+                data-year="2024" 
+                data-fuel="Petrol" 
+                data-transmission="Automatic" 
+                data-colour="Racing yellow" 
+                data-engine="2.0 L" 
+                data-co2="204 g/km"
+                data-doors="2"
+                date-price="73,000$">View details</button> 
+                <div class="car-item">
+                    <span class="like-icon">❤️</span> 
+                   <button class="btn like">Like</button>
+               </div>
+          
+                    </div>
+
+            <div class="box">
+                <h2>BMW</h2>
+                <h4>I8 2dr Auto</h4>
+                <img src="sport6.jpg" alt="Image 6">
+                <button class="button-view" data-mileage="24,000" 
+                data-year="2017" 
+                data-fuel="Petrol/Electric" 
+                data-transmission="Automatic" 
+                data-colour="Grey" 
+                data-engine="1.5 L" 
+                data-co2="49 g/km"
+                data-doors="2"
+                date-price="41,995$">View details</button>
+                <div class="car-item">
+                    <span class="like-icon">❤️</span> 
+                   <button class="btn like">Like</button>
+               </div>
+       
+                </div>
+        
+                <div class="popup-overlay" style="display: none;">
+                    <div class="popup-content">
+                        <button class="close-popup">Close</button>
+                        <div id="popup-details"></div>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <footer>
+        <nav>
+            <ul>
+               
+                <li><a href ="https://www.facebook.com/"> Facebook </a></li>
+                <li><a href = "https://www.instagram.com/"> Instagram </a></li>
+                <li><a href = "https://www.youtube.com/"> Youtube </a></li>
+                <li><a href = "https://www.tiktok.com/foryou?lang=en"> Tiktok </a></li>
+                <li><a href = "#"> Privacy Policy </a></li>
+                <li><a href = "#"> Cookies Policy </a></li>
+            </ul>
+        </nav>
+    </footer>
+
+    <script src="koli.js"></script> 
+</body>
+</html>

@@ -1,0 +1,529 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #f0f8ff;
+}
+
+/* Header and Navigation */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to right, #003366, #0066cc);
+    padding: 10px 0;
+    z-index: 10;
+    box-shadow: 0 4px 15px rgba(0, 102, 204, 0.2);
+    transform: translateY(0);
+    transition: top 0.5 ease;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+header.scrolled {
+    top: -100px; /* Придвижи го header нагоре кога скролувате */
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #99ccff;
+    transform: translateY(-2px);
+}
+
+.logo {
+    text-align: center;
+    color: white;
+    font-size: 43px;
+    font-weight: 800;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    -webkit-text-stroke: 2.8px rgb(17, 17, 17);
+
+}
+
+.logo img {
+    height: 70px;
+    width: auto;
+}
+
+/* Search Bar */
+.search-container {
+    position: relative;
+}
+
+.search-input {
+    padding: 0.7rem 1.2rem;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    width: 220px;
+    transition: all 0.4s ease;
+    font-size: 0.95rem;
+}
+
+.search-input:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    width: 280px;
+}
+
+.search-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+}
+
+/* Categories Section */
+#kategorija, #aboutus, #contact, #anketa{
+    text-align: center;
+    padding: 2.5rem;
+    font-size: 2.5rem;
+    color: #003366;
+    font-weight: 800;
+    margin-top: 13%;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+
+}
+
+#kategorija::after, #aboutus::after, #contact::after, #anketa::after{
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(to right, #003366, #0066cc);
+    margin: 15px auto;
+    border-radius: 2px;
+}
+
+
+
+/*ANKETA*/
+.survey-container {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+.answer-option {
+    margin: 15px 0;
+    padding: 12px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.answer-option:hover {
+    background: #e9ecef;
+    transform: translateX(5px);
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+label {
+    color: #495057;
+    cursor: pointer;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: #45a049;
+}
+
+.error-message {
+    color: #dc3545;
+    font-size: 14px;
+    margin-top: 10px;
+    display: none;
+}
+
+.submitted {
+    color: #28a745;
+    text-align: center;
+    margin-top: 20px;
+    display: none;
+    font-weight: 500;
+}
+
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    margin-top: 10px;
+    font-family: inherit;
+    resize: vertical;
+}
+
+.rating-container {
+    margin: 20px 0;
+}
+
+.rating-stars {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.star {
+    font-size: 24px;
+    cursor: pointer;
+    color: #ffd700;
+}
+
+p {
+    color: #495057;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+
+
+
+.categories-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    padding: 2rem;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+#tekst-aboutus {
+    border-radius: 10px;
+    border: 3px double #2b3d78; /* малку потемна нијанса на темносина */
+    text-align: center;
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto; /* Центрирање */
+    padding: 20px;
+    background-color: #f0f4ff; /* Светла, пријатна боја на позадината */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Сенка за повеќе длабочина */
+    font-family: Arial, sans-serif;
+    color: #000000; /* Темна боја за текстот за добра читливост */
+    line-height: 1.6; /* Простор помеѓу линиите за лесно читање */
+}
+#tekst-aboutus p {
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: 300;
+    font-weight: bold;
+}
+
+#contact-podatoci {
+    background-color: #f0f4ff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    font-family: Arial, sans-serif;
+}
+
+#contact-podatoci p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.contact-info {
+    margin-top: 15px;
+}
+
+.contact-info p {
+    font-size: 16px;
+    margin: 10px 0;
+    color: #2b3d78; /* Потемна сина боја за иконите и информациите */
+}
+
+.contact-info strong {
+    font-weight: bold;
+    color: #1f2d56;
+}
+
+
+.category-box {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 102, 204, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    border: 2px solid darkblue ;
+}
+
+
+.category-box img {
+    width: auto;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 20px;
+    margin-left: 40px;
+    margin-top: 40px;
+    
+}
+
+
+.category-box:hover {
+    transform: scale(1.2); /* Zgolemuva box-ot */
+    box-shadow: 0 10px 5px rgb(16, 98, 125); /* Podobra senka za naglasuvanje */
+}
+
+
+.category-content {
+    padding: 2rem;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.95), white);
+}
+
+.category-content h3 {
+    font-size: 25px;
+    color: rgba(15, 8, 230, 0.947);
+    font-weight: bold;
+    margin: 0 0 10px;
+    -webkit-text-stroke: 2.5px black;
+
+}
+
+.category-content p {
+    color: #4d4d4d;
+    font-size: 1rem;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(to right, #003366, #0066cc);
+    color: #fff;
+    padding: 3rem 0;
+    margin-top: 5rem;
+}
+
+footer nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5rem;
+}
+
+footer nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+footer nav ul li a:hover {
+    opacity: 1;
+    color: #99ccff;
+    transform: translateY(-2px);
+}
+
+/* Popup Styles */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 51, 102, 0.7);
+    z-index: 100;
+    backdrop-filter: blur(5px);
+}
+
+.popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 102, 204, 0.25);
+    max-width: 550px;
+    width: 90%;
+}
+
+.popup-content h2 {
+    color: #003366;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.popup-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.popup-content input {
+    padding: 1rem;
+    border: 2px solid #e6e6e6;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.popup-content input:focus {
+    border-color: #0066cc;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+}
+
+.popup-content button {
+    background: linear-gradient(to right, #003366, #0066cc);
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.popup-content button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 102, 204, 0.2);
+}
+
+/* Cookie Popup Specific Styles */
+#cookie-popup .popup-content {
+    max-width: 650px;
+}
+
+#cookie-popup h1 {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+    color: #003366;
+    font-weight: 800;
+}
+
+#cookie-popup h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+    color: #0066cc;
+}
+
+#cookie-popup p {
+    margin-bottom: 1.8rem;
+    line-height: 1.7;
+    color: #4d4d4d;
+    font-size: 1.05rem;
+}
+
+#cookie-popup h6 {
+    color: #0066cc;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-top: 0.8rem;
+    font-size: 0.9rem;
+}
+
+.popup-button {
+    margin: 0.8rem;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+#accept-all {
+    background-color: #0066cc;
+    color: white;
+}
+
+#reject-all {
+    background-color: #e6e6e6;
+    color: #4d4d4d;
+}
+
+#customize {
+    background-color: #003366;
+    color: white;
+}
+
+.popup-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 102, 204, 0.2);
+}
+
+

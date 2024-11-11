@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reviews</title>
+
+
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      color: #2c3e50;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+      padding-bottom: 400px; /* Space for the review form */
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      padding: 1rem;
+      z-index: 10;
+      border-radius: 0 0 15px 15px;
+      margin-top: 0;
+    }
+
+    .reviews-container {
+      display: grid;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .review {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 15px;
+      padding: 1.5rem;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .review:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    }
+
+    .review-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid rgba(44, 62, 80, 0.1);
+    }
+
+    .review-header span {
+      font-size: 0.9rem;
+      color: #7f8c8d;
+    }
+
+    .rating {
+      font-size: 1.5rem;
+      color: #f1c40f;
+      margin-bottom: 1rem;
+      display: flex;
+      gap: 0.2rem;
+    }
+
+    .rating span {
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .rating span:hover {
+      transform: scale(1.2);
+    }
+
+    .review-content {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #34495e;
+      margin-bottom: 1rem;
+    }
+
+    .delete-btn {
+      background: #e74c3c;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      font-size: 0.9rem;
+    }
+
+    .delete-btn:hover {
+      background: #c0392b;
+    }
+
+    .review-form {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 2rem;
+      box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
+      border-top-left-radius: 25px;
+      border-top-right-radius: 25px;
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+    }
+
+    .review-form h2 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-content {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    textarea {
+      width: 100%;
+      height: 100px;
+      padding: 1rem;
+      border: 2px solid #e0e0e0;
+      border-radius: 12px;
+      font-size: 1rem;
+      resize: none;
+      transition: border-color 0.3s ease;
+      font-family: inherit;
+    }
+
+    textarea:focus {
+      outline: none;
+      border-color: #3498db;
+    }
+
+    .submit-btn {
+      background: #3498db;
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: background 0.3s ease, transform 0.2s ease;
+      width: fit-content;
+      margin: 0 auto;
+    }
+
+    .submit-btn:hover {
+      background: #2980b9;
+      transform: scale(1.05);
+    }
+
+    .no-reviews {
+      text-align: center;
+      padding: 2rem;
+      color: #7f8c8d;
+      font-size: 1.2rem;
+    }
+</style>
+</head>
+
+
+
+<body>
+  <div class="container">
+    <h1>Reviews</h1>
+    <div id="reviews-container" class="reviews-container">
+      <!-- Reviews will be loaded here -->
+    </div>
+  </div>
+
+  <div class="review-form">
+    <h2>Add Your Review</h2>
+    <div class="form-content">
+      <div class="rating" id="rating-input">
+        <span class="rating-star">☆</span>
+        <span class="rating-star">☆</span>
+        <span class="rating-star">☆</span>
+        <span class="rating-star">☆</span>
+        <span class="rating-star">☆</span>
+      </div>
+      <textarea id="review-text" placeholder="Share your thoughts..."></textarea>
+      <button class="submit-btn">Submit Review</button>
+    </div>
+  </div>
+
+  <script>
+   
+    let reviews = JSON.parse(localStorage.getItem('reviews')) || [];
+    let selectedRating = 0;
+
+    function formatDate(date) {
+      const options = { 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric',
+        hour: '2-digit', 
+        minute: '2-digit' 
+      };
+      return new Date(date).toLocaleDateString('en-US', options);
+    }
+
+    function saveReviews() {
+      localStorage.setItem('reviews', JSON.stringify(reviews));
+    }
+
+    function displayReviews() {
+      const container = document.getElementById('reviews-container');
+      container.innerHTML = '';
+
+      if (reviews.length === 0) {
+        container.innerHTML = `
+          <div class="no-reviews">
+            No reviews yet. Be the first to share your thoughts!
+          </div>
+        `;
+        return;
+      }
+
+      reviews
+        .sort((a, b) => new Date(b.date) - new Date(a.date))
+        .forEach((review, index) => {
+          const reviewElement = document.createElement('div');
+          reviewElement.classList.add('review');
+          if (index === 0) reviewElement.classList.add('new-review');
+          
+          reviewElement.innerHTML = `
+            <div class="review-header">
+              <div class="rating">
+                ${Array(5).fill('').map((_, i) => 
+                  `<span>${i < review.rating ? '★' : '☆'}</span>`
+                ).join('')}
+              </div>
+              <span>${formatDate(review.date)}</span>
+            </div>
+            <div class="review-content">${review.text}</div>
+            <button class="delete-btn" data-index="${index}">Delete</button>
+          `;
+          container.appendChild(reviewElement);
+        });
+
+      
+      document.querySelectorAll('.delete-btn').forEach(button => {
+        button.addEventListener('click', (e) => {
+          if (confirm('Are you sure you want to delete this review?')) {
+            const index = parseInt(button.dataset.index);
+            reviews.splice(index, 1);
+            saveReviews();
+            displayReviews();
+          }
+        });
+      });
+    }
+
+    
+    const ratingStars = document.querySelectorAll('.rating-star');
+    
+    ratingStars.forEach((star, index) => {
+      star.addEventListener('mouseenter', () => {
+        ratingStars.forEach((s, i) => {
+          s.textContent = i <= index ? '★' : '☆';
+        });
+      });
+
+      star.addEventListener('mouseleave', () => {
+        ratingStars.forEach((s, i) => {
+          s.textContent = i < selectedRating ? '★' : '☆';
+        });
+      });
+
+      star.addEventListener('click', () => {
+        selectedRating = index + 1;
+        ratingStars.forEach((s, i) => {
+          s.textContent = i < selectedRating ? '★' : '☆';
+        });
+      });
+    });
+
+      document.querySelector('.submit-btn').addEventListener('click', () => {
+      const reviewText = document.getElementById('review-text').value.trim();
+      
+      if (!selectedRating) {
+        alert('Please select a rating');
+        return;
+      }
+      
+      if (!reviewText) {
+        alert('Please write a review');
+        return;
+      }
+
+      const newReview = {
+        rating: selectedRating,
+        text: reviewText,
+        date: new Date().toISOString()
+      };
+
+      reviews.unshift(newReview);
+      saveReviews();
+      displayReviews();
+
+      
+      document.getElementById('review-text').value = '';
+      selectedRating = 0;
+      ratingStars.forEach(star => star.textContent = '☆');
+    });
+
+    
+    displayReviews();
+  </script>
+</body>
+</html>
