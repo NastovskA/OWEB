@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CompComponent } from "./comp/comp.component";
 import { DRIVERS } from '../db-data'; 
-import { CommonModule } from '@angular/common';  
+import { CommonModule } from '@angular/common';
+  
 
 @Component({
   selector: 'app-root',

@@ -1,10 +1,28 @@
-<div class = "cela">
-  <app-comp  *ngFor ="let drv of vozaci; index as i"
+<div role="region" aria-label="List of drivers" aria-busy="false"  aria-live="polite">
+
+  <app-comp  
   
+  *ngFor ="let drv of vozaci; index as i; first as prv; last as posleden; even as par; odd as nepar;"
 
   [vozac] ="drv" (click) = "onAppView()"
+  [class.is-first] = "prv"
+  [class.is-last] = "posleden"
+  [class.is-even] = "par"
+  [class.is-odd] = "nepar"  
   [indeks]= "i+1"
-  class = "card">
-</app-comp>
+
+  role="listitem"
+  [attr.aria-label]="'Driver ' + drv?.name"
+  [attr.aria-posinset]="i + 1"
+  [attr.aria-setsize]="vozaci.length"
+  [attr.aria-live]="'polite'"
+  aria-hidden="false"
+
+  [attr.aria-invalid]="drv?.isInvalid ? 'true' : 'false'" 
+  [attr.aria-describedby]="drv?.description ? drv?.description : null" 
+  [attr.aria-busy]="drv?.isBusy ? 'true' : 'false'"
   
+  >
+
+</app-comp>
 </div>

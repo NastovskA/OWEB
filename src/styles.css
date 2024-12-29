@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+html, body{height: 100%;}
+body{margin: 0; font-family: 'Roboto', sans-serif;}
+
+.is-odd{color: green}
+.is-even{color: red}
+.is-first{color: yellow}
+.is-last{color: orange}
+
+.is-back{background-color: blue}
+
+.undr{
+    text-emphasis: underline;
+}

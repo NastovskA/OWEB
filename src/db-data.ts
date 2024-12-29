@@ -5,7 +5,7 @@ export const DRIVERS: any = [
     {
         id: 1,
         name: "Peco",
-        iconUrl: 'https://resources.motogp.pulselive.com/photo-resources/2024/02/19/3a568eee-1e12-4091-b120-f53c71cbe8f6/rider-bio_francescobagnaia.png?height=400&width=600',
+        //iconUrl: 'https://resources.motogp.pulselive.com/photo-resources/2024/02/19/3a568eee-1e12-4091-b120-f53c71cbe8f6/rider-bio_francescobagnaia.png?height=400&width=600',
         team: "Ducati",
         category: 'EXPERT',
         points: 100
