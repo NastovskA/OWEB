@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriveNest - It's time for a new car</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="stil.css">
+</head>
+
+
+<body id="home">
+
+    
+    <script src="skripta.js"></script>
+
+    <div id="cookie-popup" class="popup">
+        <div class="popup-content">
+            <p>
+                <h1>COOKIES</h1>
+                <h3>We value your privacy</h3>
+                We use cookies to enhance your browsing experience, serve personalized ads or content, and analyze our traffic. By clicking "Accept All", you consent to our use of cookies.
+                <h6>Read More</h6>
+            </p>
+            <button id="customize" class="popup-button">Customize</button>
+            <button id="reject-all" class="popup-button">Reject All</button>
+            <button id="accept-all" class="popup-button">Accept All</button>
+        </div>
+    </div>
+
+    <div class="main-buttons">
+        <button id="login-btn">Log In</button>
+        <button id="signup-btn">Sign Up</button>
+    </div>
+
+    <!-- Register Popup -->
+    <div id="registerPopup" class="popup">
+        <div class="popup-content">
+            <h2>Sign Up</h2>
+            <form id="registerForm">
+                <input type="text" id="firstName" placeholder="Name" required>
+                <input type="text" id="lastName" placeholder="Surname" required>
+                <input type="text" id="phone" placeholder="Phone number" required>
+                <input type="text" id="nationality" placeholder="Nationality" required>
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit">Submit</button>
+            </form>
+            <button type="button" id="close-register-popup">Close</button>
+        </div>
+    </div>
+
+    <!-- Login Popup -->
+    <div id="loginPopup" class="popup">
+        <div class="popup-content">
+            <h2>Log In</h2>
+            <form id="loginForm">
+                <input type="text" id="loginUsername" placeholder="Username" required>
+                <input type="password" id="loginPassword" placeholder="Password" required>
+                <button type="submit">Log In</button>
+            </form>
+            <button type="button" id="close-login-popup">Close</button>
+        </div>
+    </div>
+
+    <header>
+        <nav>
+            <ul>    
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#kategorija">CATEGORIES</a></li>
+                <li><a href="reviews.html">CAR REVIEWS</a></li>
+                <li><a href="#aboutus">ABOUT US</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+                <li><a href="#anketa">SURVEY</a></li>
+                <li><a href="#login" id="loginButton" onclick="showPopup('login')">LOG IN</a></li>
+                <li><a href="#signin" id="signinButton" onclick="showPopup('register')">SIGN UP</a></li>
+                <li>
+                    <div class="search-container">
+                        <input type="text" placeholder="🔍 Search ..." class="search-input">
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div class="logo"><img src="kola.png" alt="kola">FIND YOUR NEXT CAR HERE</div>
+    </header>
+    
+
+
+    <h3 id="kategorija">CATEGORIES</h3>
+   
+
+
+    <section class="categories-section">
+        <div class="category-box" onclick="openCategoryPage('coupe.html')">
+            <img src="coupe.png" alt="Coupe">
+            <div class="category-content">
+                <h3>COUPE</h3>
+                <p>A coupe is the epitome of style and performance, featuring a sleek, two-door design that offers a thrilling driving experience. Known for their sporty aesthetics and powerful engines, coupes combine elegance with high-performance dynamics, making them a favorite among enthusiasts.</p>
+            </div>
+        </div>
+
+        <div class="category-box" onclick="openCategoryPage('sport.html')">
+            <img src="sport2.png" alt="sports">
+            <div class="category-content">
+                <h3>SPORTS CAR</h3>
+                <p>Sports cars are built for speed, agility, and precision. With cutting-edge design and advanced technology, they deliver an exhilarating ride that’s both powerful and refined. Whether on the track or the road, sports cars provide an unmatched sense of freedom and adrenaline.</p>
+            </div>
+        </div>
+
+        <div class="category-box" onclick="openCategoryPage('SUVs.html')">
+            <img src="jeep2.png" alt="jeep">
+            <div class="category-content">
+                <h3>SUVs</h3>
+                <p>SUVs offer a perfect blend of versatility, comfort, and performance. Designed for both urban and off-road adventures, these vehicles provide ample space, safety, and advanced features, making them ideal for families and explorers alike.</p>
+            </div>
+        </div>
+
+        <div class="category-box" onclick="openCategoryPage('electric.html')">
+            <img src="electric3.png" alt="electric">
+            <div class="category-content">
+                <h3>ELECTRIC CAR</h3>
+                <p>Electric cars represent the future of sustainable driving, offering zero emissions and impressive energy efficiency. With innovative technology, electric vehicles (EVs) combine eco-friendliness with modern performance, providing a quiet, smooth ride and a greener alternative to traditional vehicles.</p>
+            </div>
+        </div>
+
+    </section>
+
+
+    <h3 id="aboutus">ABOUT US</h3>
+    <div id="tekst-aboutus">
+        <p>
+            Welcome to DriveNest  - where your drive begins! We're not just about selling cars; we're passionate about matching you with the perfect vehicle to fit your lifestyle, needs, and budget. With years of expertise in the automotive industry, our team is dedicated to bringing you a curated selection of top-quality vehicles, from sleek coupes to powerful SUVs, all meticulously inspected and ready for the road.
+
+Our mission is simple: to make car buying exciting, transparent, and hassle-free. We believe in delivering value through trust, quality, and exceptional service. When you shop with us, you’re not only choosing a car but also joining a family of auto enthusiasts who put customer satisfaction above all else. Whether you’re looking for a reliable daily commuter or a luxury performance car, we’ve got you covered.
+
+At DriveNest , your journey doesn’t end with the purchase – we’re here for the long haul. With a range of services from financing options to test drives, vehicle inspections, and after-sales support, we make sure you drive away with confidence and peace of mind. Come explore our collection and let us help you hit the road in style!
+</p>
+    </div>
+
+    <h3 id="contact">CONTACT</h3>
+   <d id="contact-podatoci">
+    <p>We’re here to help! Reach out to us via phone, email, or visit us directly. You can also fill out the form below, and we’ll get back to you as soon as possible.</p>
+    <div class="contact-info">
+        <p>📞 <strong>Phone:</strong> 
+            <a href="tel:+1234567890">+123 456 7890</a>
+        </p>
+        <p>✉️ <strong>Email:</strong> 
+            <a href="mailto:DriveNet@yourcompany.com">DriveNet@yourcompany.com</a>
+        </p>
+        <p>📍 <strong>Address:</strong> 
+            <a href="https://www.google.com/maps/search/?api=1&query=123+Main+Street,+Skopje,+Macedonia" target="_blank">
+                123 Main Street, Skopje, Macedonia
+            </a>
+        </p>
+    </div>
+    
+    
+</d>
+
+        <h3 id="anketa">SURVEY</h3>
+        <div class="survey-container" id="surveyContainer">
+            <h2>Customer Satisfaction Survey</h2>
+            <form id="surveyForm" action="javascript:void(0);" onsubmit="submitSurvey()">
+                <p>Are you satisfied with our website?</p>
+                
+                <div class="answer-option">
+                    <input type="radio" id="yes" name="satisfaction" value="yes" required>
+                    <label for="yes">Yes</label>
+                </div>
+                
+                <div class="answer-option">
+                    <input type="radio" id="no" name="satisfaction" value="no" required>
+                    <label for="no">No</label>
+                </div>
+        
+                <p>How easy was it to navigate through the website?</p>
+                <div class="answer-option">
+                    <input type="radio" id="easy" name="navigation" value="easy" required>
+                    <label for="easy">Easy</label>
+                </div>
+                
+                <div class="answer-option">
+                    <input type="radio" id="average" name="navigation" value="average" required>
+                    <label for="average">Average</label>
+                </div>
+        
+                <div class="answer-option">
+                    <input type="radio" id="difficult" name="navigation" value="difficult" required>
+                    <label for="difficult">Difficult</label>
+                </div>
+        
+                <p>Do you have any additional feedback for us?</p>
+                <textarea rows="4" placeholder="Please share your thoughts..."></textarea>
+                
+                <div class="error-message" id="error-message">Please select an option before submitting.</div>
+                
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+            <p class="submitted" id="submittedMessage" style="display: none;">Thank you for your feedback!</p>
+        </div>
+        
+
+    <footer>
+            <nav>
+                <ul>
+                    <li><a href ="https://www.facebook.com/"> Facebook </a></li>
+                    <li><a href = "https://www.instagram.com/"> Instagram </a></li>
+                    <li><a href = "https://www.youtube.com/"> Youtube </a></li>
+                    <li><a href = "https://www.tiktok.com/foryou?lang=en"> Tiktok </a></li>
+                    <li><a href = "#"> Privacy Policy </a></li>
+                    <li><a href = "#"> Cookies Policy </a></li>
+
+                </ul>
+            </nav>
+    </footer>
+</body>
+</html>

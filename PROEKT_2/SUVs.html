@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">SUVs </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="kategorii.css"> 
+
+
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="pocetna.html">HOME</a></li>
+                <li><a href="pocetna.html">CATEGORIES</a></li>
+                <li><a href="reviews.html">CAR REVIEWS</a></li>
+                <li><a href="pocetna.html">ABOUT US</a></li>
+                <li><a href="pocetna.html">CONTACT</a></li>
+               
+                <li>
+                    <div class="search-container">
+                        <input type="text" placeholder="🔍 Search ..." class="search-input">
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div class="title">SUVs</div>
+    </header>
+
+    <div class="main-container">
+        <div class="filter-section">
+            <h2>Search & Filter</h2>
+            
+            <div class="plakanje">
+                <strong>PAYMENT TYPE:</strong>
+                <label><input name="paymentType" type="radio" value="totalPrice">Total Price</label>
+                <label><input name="paymentType" type="radio" value="monthlyPrice">Monthly Price</label>
+            </div>
+    
+            <div class="car-brand">
+                <label for="carBrand"><strong>CAR BRANDS:</strong></label>
+                <select id="carBrand" name="carBrand">
+                    <option value="all">All</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="bmw">BMW</option>
+                    <option value="audi">Audi</option>
+                    <option value="toyota">Toyota</option>
+                    <option value="ford">Ford</option>
+                    <option value="jaguar">Jaguar</option>
+                    <option value="porsche">Porsche</option>
+                    <option value="landrover">Land Rover</option>
+                    <option value="volkswagen">Volkswagen</option>
+                    <option value="skoda">Skoda</option>
+                    <option value="tesla">Tesla</option>
+                    <option value="kia">Kia</option>
+                    <option value="mini">Mini</option>
+                </select>
+            </div>
+    
+            <div class="price-range">
+                <label for="priceFrom"><strong>PRICE FROM:</strong></label>
+                <input type="number" id="priceFrom" name="priceFrom" min="10000" step="1000" placeholder="Enter Min Price">
+                
+                <label for="priceTo"><strong>PRICE TO:</strong></label>
+                <input type="number" id="priceTo" name="priceTo" min="10000" step="1000" placeholder="Enter Max Price">
+            </div>
+    
+            <div class="fuel-type">
+                <label for="fuelType"><strong>FUEL TYPE:</strong></label>
+                <select id="fuelType" name="fuelType">
+                    <option value="all">All</option>
+                    <option value="petrol">Petrol</option>
+                    <option value="diesel">Diesel</option>
+                    <option value="hybrid">Hybrid</option>
+                </select>
+            </div>
+    
+            <div class="transmission">
+                <strong>TRANSMISSION:</strong>
+                <label><input type="radio" id="automatic" name="transmission" value="automatic">Automatic</label>
+                <label><input type="radio" id="manual" name="transmission" value="manual">Manual</label>
+            </div>
+    
+            <div class="mileage">
+                <label for="mileage"><strong>Mileage (km):</strong></label>
+                <select id="mileage" name="mileage">
+                    <option value="all">All</option>
+                    <option value="10000">0-10,000 km</option>
+                    <option value="50000">10,000-50,000 km</option>
+                    <option value="100000">50,000-100,000 km</option>
+                    <option value="150000">100,000+ km</option>
+                </select>
+            </div>
+
+            <div class="filter-buttons">
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </div>
+        </div>
+
+        <div class="boxes-container">
+            <p id="noResultsMessage" style="display: none; color: red; font-weight: bold;">No cars available for the selected brand.</p>
+
+            <div class="box">
+                <h2>Audi</h2>
+                <h4>Q8 e-tron 50 S line Auto quattro 5dr 95kWh (11kW Charger)</h4>
+                <img src="suv1.jpg" alt="Image 1">
+                <button class="button-view" data-mileage="13,450" 
+                data-year="2023" 
+                data-fuel="Electric" 
+                data-transmission="Automatic" 
+                data-colour="Grey" 
+                data-doors="5"
+                date-price="49,995$">View details</button>
+                <div class="car-item">
+                    <span class="like-icon">❤️</span> 
+                   <button class="btn like">Like</button>
+               </div>
+       
+            </div>
+
+            <div class="box" >
+                <h2>Mercedes-Benz</h2>
+                    <h4>G Class 5.5 G63 V8 BiTurbo AMG Edition 463 SpdS+7GT 4WD Euro 6 (s/s) 5dr</h4>
+                <img src="suv2.jpg" alt="Image 2">
+                <button class="button-view" data-mileage="50,000" 
+                data-year="2016" 
+                data-fuel="Petrol" 
+                data-transmission="Automatic" 
+                data-colour="N/a" 
+                data-engine="5.5 L" 
+                data-co2="322 g/km"
+                data-doors="5"
+                date-price="65,000$">View details</button>
+                <div class="car-item">
+                    <span class="like-icon">❤️</span> 
+                   <button class="btn like">Like</button>
+               </div>
+       
+            </div>
+
+            <div class="box">
+                <h2>Land Rover</h2>
+                <h4>Range Rover Sport 3.0 P400 HST 5dr Auto</h4>
+                <img src="suv3.jpg" alt="Image 3">
+                <button class="button-view" data-mileage="49,980" 
+                data-year="2019" 
+                data-fuel="Petrol" 
+                data-transmission="Semiauto" 
+                data-colour="Silver" 
+                data-engine="3.0 L" 
+                data-co2="213 g/km"
+                date-price="35,069$">View details</button> 
+                <div class="car-item">
+                    <span class="like-icon">❤️</span> 
+                   <button class="btn like">Like</button>
+               </div>
+             
+                 </div>
+
+            <div class="box" >
+                <h2>Volkswagen</h2>
+                <h4>T-Cross 1.0 TSI 110 SEL 5dr DSG</h4>
+                <img src="suv4.jpg" alt="Image 4">
+                <button class="button-view" data-mileage="7,887" 
+                data-year="2021" 
+                data-fuel="Petrol" 
+                data-transmission="Automatic" 
+                data-colour="Grey" 
+                data-engine="1.0 L" 
+                data-co2="147 g/km"
+                data-doors="5"
+                date-price="20.299$">View details</button> 
+                <div class="car-item">
+                    <span class="like-icon">❤️</span> 
+                   <button class="btn like">Like</button>
+               </div>
+             
+                 </div>
+
+            <div class="box">
+                <h2>Skoda</h2>
+                <h4>Karoq 1.5 TSI Sportline 5dr DSG</h4>
+                <img src="suv5.jpg" alt="Image 5">
+                <button class="button-view"  data-mileage="14,300" 
+                data-year="2023" 
+                data-fuel="Petrol" 
+                data-transmission="Automatic" 
+                data-colour="Silver" 
+                data-engine="1.5 L" 
+                data-co2="145 g/km"
+                data-doors="5"
+                date-price="26,614$">View details</button> 
+                <div class="car-item">
+                    <span class="like-icon">❤️</span>
+                   <button class="btn like">Like</button>
+               </div>
+          
+                    </div>
+
+            <div class="box">
+                <h2>Audi</h2>
+                <h4>Q3 35 TFSI S Line 5dr S Tronic</h4>
+                <img src="suv6.jpg" alt="Image 6">
+                <button class="button-view"  data-mileage="15,790" 
+                data-year="2020" 
+                data-fuel="Petrol" 
+                data-transmission="Semiauto" 
+                data-colour="White" 
+                data-engine="1.5 L" 
+                data-co2="161 g/km"
+                data-doors="5"
+                date-price="24,950$">View details</button>
+                <div class="car-item">
+                    <span class="like-icon">❤️</span> 
+                   <button class="btn like">Like</button>
+               </div>
+       
+                </div>
+        
+                <div class="popup-overlay" style="display: none;">
+                    <div class="popup-content">
+                        <button class="close-popup">Close</button>
+                        <div id="popup-details"></div>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <footer>
+        <nav>
+            <ul>
+                
+                <li><a href ="https://www.facebook.com/"> Facebook </a></li>
+                <li><a href = "https://www.instagram.com/"> Instagram </a></li>
+                <li><a href = "https://www.youtube.com/"> Youtube </a></li>
+                <li><a href = "https://www.tiktok.com/foryou?lang=en"> Tiktok </a></li>
+                <li><a href = "#"> Privacy Policy </a></li>
+                <li><a href = "#"> Cookies Policy </a></li>
+            </ul>
+        </nav>
+    </footer>
+
+    <script src="koli.js"></script> 
+</body>
+</html>
